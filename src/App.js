@@ -1,9 +1,11 @@
+import Header from './components/layout/Header'
+import Content from './components/layout/Content'
 
-
-function App() {
+export const App = () => {
   return (
     <div>
-     
+     <Header/>
+     <Content/>
     </div>
   );
 }
