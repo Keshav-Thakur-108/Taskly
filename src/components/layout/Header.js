@@ -1,18 +1,23 @@
 
 import React from 'react'
+import {FaPizzaSlice} from 'react-icons/fa'
 
 const Header = () => {
     return (
         <header className="header" data-testid="header">
             <nav>
-                <div className="logo" alt="Taskly">
-                    <div className="settings">
+                <div className="logo" >
+                   <img src="./images/logo.png" alt="Taskly"/>
+                </div>
+                 <div className="settings">
                         <ul>
-                            <li>+</li>
-                            <li>Pizza Slice!</li>
+                            <li
+                            data-testid="quick-add-task-action" className="settings__add">+</li>
+                            <li 
+                            data-testid="dark-mode-action"
+                            className="settings_darkmode"><FaPizzaSlice/></li>
                         </ul>
                     </div>
-                </div>
             </nav>
         </header>
     )
