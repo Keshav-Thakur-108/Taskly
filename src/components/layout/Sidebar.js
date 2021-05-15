@@ -16,11 +16,11 @@ const Sidebar = () => {
                 </li>
                 <li className="today" data-testid="today">
                     <span><FaRegCalendar/></span>
-                    <span>Inbox</span>
+                    <span>Today</span>
                 </li>
                 <li className="next_7" data-testid="next_7">
                     <span><FaRegCalendarAlt/></span>
-                    <span>Inbox</span>
+                    <span>Next 7 days</span>
                 </li>
             </ul>
 
