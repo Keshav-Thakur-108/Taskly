@@ -39,21 +39,26 @@ export const useTasks = selectedProject => {
 }
 
 export const useProjects = () => {
-    const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
-        firebase.firestore().collection('projects').where('userId', '==', 'ymd3we58n5xu85tw').orderBy('projectId').get().then(snapshot => {
-            const allProjects = snapshot.docs.map(project => ({
-                ...project.data(),
-                docId: project.id
-            }))
-        })
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection('projects')
+      .where('userId', '==', 'ymd3we58n5xu85tw')
+      .orderBy('projectId')
+      .get()
+      .then(snapshot => {
+        const allProjects = snapshot.docs.map(project => ({
+          ...project.data(),
+          docId: project.id,
+        }));
 
-        if(JSON.stringify(allProjects) !== JSON.stringify(allProjects))
-        {
-            setProjects(allProjects)
+        if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
+          setProjects(allProjects);
         }
-    }, [projects])
+      });
+  }, [projects]);
 
-    return {projects, setProjects}
-}
+  return { projects, setProjects };
+};
