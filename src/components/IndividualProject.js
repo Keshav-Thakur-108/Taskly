@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useProjectsValue, useSelectedProjectValue} from '../../context'
+import {useProjectsValue, useSelectedProjectValue} from '../context'
 import {FaTrashAlt} from 'react-icons/fa'
 import firebase from 'firebase'
 
