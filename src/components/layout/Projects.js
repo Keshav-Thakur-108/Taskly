@@ -16,7 +16,7 @@ const Projects = ({activeValue = null}) => {
             data-testid="project-action"
             className={
                 active === project.projectId
-                ? 'active_sidebar__project'
+                ? 'active sidebar__project'
                 : 'sidebar__project'
             }
             onClick={() => {
