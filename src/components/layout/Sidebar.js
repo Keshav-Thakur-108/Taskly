@@ -31,10 +31,10 @@ const Sidebar = () => {
                 </li>
             </ul>
 
-            <ul className="sidebar__middle">
+            <div className="sidebar__middle">
                 <span><FaChevronDown/></span>
                 <h2>Projects</h2>
-            </ul>
+            </div>
 
             <ul className="sidebar__projects">
                {showProjects && <Projects/>}

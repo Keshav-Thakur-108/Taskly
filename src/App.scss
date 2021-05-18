@@ -254,6 +254,7 @@ div {
     &.active,
     &:hover {
       font-weight: bold;
+      background-color: white;
     }
 
     &:nth-child(1) {
