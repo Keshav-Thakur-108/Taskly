@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTasks } from '../hooks'
 import {Checkbox} from '../components/Checkbox'
+import {collatedTasks} from '../constants'
+import {getTitle, getCollatedTitle, collatedTasksExist} from '../helpers'
+import {useSelectedProjectValue, useProjectsValue} from '../context'
 
-export const Tasks = ({id}) => {
+export const Tasks = () => {
 
-    const {tasks} = useTasks('1')
+    const {selectedProject} = useSelectedProjectValue()
+    const {projects} = useProjectsValue();
+    const {tasks} = useTasks(selectedProject)
 
-    console.log(tasks)
 
-    const projectName = " "
+    let projectName = ""
+
+    if(projectName && selectedProject && !collatedTasksExist(selectedProject))
+    {
+        projectName = getTitle(projects, selectedProject).name
+    }
+
+    if(collatedTasksExist(selectedProject) && selectedProject)
+    {
+        projectName = getCollatedTitle(collatedTasks, selectedProject).name
+    }
+
+    useEffect(() => {
+        document.title = `${projectName}: Taskly`
+    })
 
     return (
         <div className = "tasks" data-testid="tasks">
