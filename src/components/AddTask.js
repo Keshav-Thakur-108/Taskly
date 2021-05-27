@@ -94,7 +94,7 @@ export const AddTask = ({
                     type='button'
                     className='add-task__submit'
                     data-testid='add-task'
-                    onClick={() => addTask()}>Add Task</button>
+                    onClick={() => showQuickAddTask ? addTask() && setShowQuickAddTask(false) : addTask()}>Add Task</button>
                     {!showQuickAddTask && (
                         <span className='add-task__cancel'
                         data-testid='add-task-main-cancel'
