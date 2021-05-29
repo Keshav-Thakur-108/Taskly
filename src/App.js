@@ -22,4 +22,4 @@ export const App = ({darkModeDefault = false}) => {
   );
 }
 
-export default App;
+

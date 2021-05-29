@@ -202,9 +202,24 @@ div {
           font-size: 30px;
         }
 
-        &.settings__dark-mode svg {
-          width: 20px;
-          height: 20px;
+        button {
+          @include transparent-button();
+          color: white;
+          cursor: pointer;
+          font-size: 32px;
+        }
+
+        &.settings_darkmode {
+          button {
+            @include transparent-button();
+            color: white;
+            cursor: pointer;
+
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
         }
       }
     }
@@ -234,13 +249,20 @@ div {
     color: black;
 
     &:hover .sidebar__project-delete {
-      display: block;
+      display: flex;
+      @include va();
     }
   }
 
   &__project {
     padding: 5px 0;
     cursor: pointer;
+
+    div:nth-child(1) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
 
     &-delete {
       margin-left: auto;
