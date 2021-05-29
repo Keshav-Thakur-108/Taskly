@@ -36,7 +36,12 @@ export const IndividualProject = ({project}) => {
                         <button type="button" onClick={() => deleteProject(project.docId)}>
                             Delete
                         </button>
-                         <span onClick={() => setShowConfirm(!showConfirm)}>Cancel</span>
+                         <span 
+                         onClick={() => setShowConfirm(!showConfirm)}
+                         onKeyDown={() => setShowConfirm(!showConfirm)}
+                         role="button"
+                         tabIndex={0}
+                         >Cancel</span>
                     </div>
                 </div>
             )}
