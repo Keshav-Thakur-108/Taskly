@@ -56,7 +56,9 @@ export const AddTask = ({
     return (
         <div className={showQuickAddTask ? 'add-task add-task__overlay' : 'add-task'} data-testid = 'add-task-comp'>
             {showAddTaskMain && (
-                <div className='add-task__shallow'
+                <div
+                aria-label="Add task"
+                className='add-task__shallow'
                 data-testid='show-main-action'
                 onClick={()=> setShowMain(!showMain)}
                 onKeyDown={() => setShowMain(!showMain)}
@@ -74,6 +76,7 @@ export const AddTask = ({
                         <div data-testid='quick-add-task'>
                             <h2 className='header'>Quick Add Task</h2>
                             <span 
+                            aria-label="Cancel adding task"
                             className='add-task__cancel-x'
                             data-testid='add-task-quick-cancel'
                             onClick={() => {
@@ -98,6 +101,7 @@ export const AddTask = ({
                     setShowProjectOverlay={setShowProjectOverlay}/>
                     <TaskDate setTaskDate={setTaskDate} showTaskDate ={showTaskDate} setShowTaskDate={setShowTaskDate}/>
                     <input className='add-task__content'
+                    aria-label="Enter your task"
                     data-testid='add-task-content'
                     type='text'
                     value={task}
@@ -108,7 +112,9 @@ export const AddTask = ({
                     data-testid='add-task'
                     onClick={() => showQuickAddTask ? addTask() && setShowQuickAddTask(false) : addTask()}>Add Task</button>
                     {!showQuickAddTask && (
-                        <span className='add-task__cancel'
+                        <span 
+                        aria-label="Cancel adding a task"
+                        className='add-task__cancel'
                         data-testid='add-task-main-cancel'
                         onClick={() => {
                             setShowMain(false)

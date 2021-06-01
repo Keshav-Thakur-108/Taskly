@@ -21,6 +21,7 @@ const Sidebar = () => {
                 <li className={active === 'inbox' ? 'active' : undefined} data-testid="inbox" 
                 >
                     <div
+                    aria-label="Show inbox tasks"
                     onClick={() => {setActive('inbox'); setSelectedProject('INBOX')}}
                     onKeyDown={() => {setActive('inbox'); setSelectedProject('INBOX')}}
                     role="button"
@@ -34,6 +35,7 @@ const Sidebar = () => {
                 
                 >
                     <div
+                    aria-label="Show today's tasks"
                     onClick={() => {setActive('today'); setSelectedProject('TODAY')}}
                     onKeyDown={() => {setActive('today'); setSelectedProject('TODAY')}}
                     role="button"
@@ -46,6 +48,7 @@ const Sidebar = () => {
                 <li className={active === 'next_7' ? 'active' : undefined} data-testid="next_7"
                 >
                     <div
+                    aria-label="Show tasks for the next 7 days"
                     onClick={() => {setActive('next_7'); setSelectedProject('NEXT_7')}}
                     onKeyDown={() => {setActive('next_7'); setSelectedProject('NEXT_7')}}
                     role="button"
